@@ -6,7 +6,7 @@ import {Button} from '@material-ui/core'
 import {addBeatToCart} from '../store/cart'
 import {deleteBeat} from '../store/deletebeat'
 import {ToastContainer, toast} from 'react-toastify'
-import 'react-toastify/dist/ReactToastify.css'
+// import 'react-toastify/dist/ReactToastify.css'
 import AppFooter from './modules/views/AppFooter'
 
 import CustomizedRatings from './rating'
