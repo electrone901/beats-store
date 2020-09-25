@@ -20,11 +20,10 @@ script:
 before_deploy: # omit node_modules, since we set skip_cleanup below
   - rm -rf node_modules
 deploy: # see README for details on these keys
-  # prevents travis from deleting the build
   skip_cleanup: true
   provider: heroku
-  # app should be your heroku app name; see README
-  app: beats-store
-  # the secure key indicates an encrypted value; see README
+  app: ""
   api_key:
-    secure: iqEeQh334BsbyMDPWKd/e0Ja1mBAHxjCGdh+Q8eCDUnC4ypk5vvVdb5mYEIbuIyQ/OePG5kISf5OiVIy2g1f50RUMT5AuV4cAhdTfSXo8tpNepaPAF4gC3M4zLgBFMXejWIi1xV9yAOEtRPoQ0SubBbxCDuUcs5vqurnu2pYZtMURSwyWc+SBN4bSm0tsiKaFobXEcjUJTT2egVG5GHO0gRRrR3G7t9Ec3ZdxkwArKgJT7YBj05l3WZEE41Srm+vosE9B5UTQXJh6eFjbvy1y+/CL7n1/ywt99pm8lPfWqKer7VLkelrdcIAwxslbt56q8GCmZt2iQSiKK8buV3RaUCQ8lcaM1hJr/44KMPAoLwPbdhZamC2Bp8oPCqGcf0xoWfpPLac35OsmUIF2GT845xX5MPN0gMPrT6B7vQ2+v7mplJ9fMjAXUzgAQMEh3L0STils6GDVfnUyHb2AJJIld/6LvqyhwmpzNlYu35tIPFaUwYRXbU9qMZKbCJEksuN4whay2NRKd1f3RFW7+jcCcHHWWuRRB6BY0Dov3pGcNIfulDuKlt+/lCNM8sm69TKp4LJPucJaUeoq/YpOx52X6ankqTAfatFSBDkAxJ8mZKI22/y/1Ztm5tOlTso7kLr5SVnEL9Erd/yvyI1IYF5MXI0tz/JV4SIx0ivW1vSSQ0=
+    secure: X0nF1r8uro3V+p0GIttLEEcUuvrcixTUcDPcCVRDWKWXr88Tg/S36LB0KmHK0MZhLvlbLi5XAD4mxCO5geXDT674e3il6PLHtb4lVPdyRvm79CcO4a7Eyd/1NonQWALtKSQBZII01q2Q6ihU6MbwQyEtI008s+t25RIoUrox1lF5EKk8w2UYgygBo8UxvX1zLrC48c/v9YikXixJndqj/gxWfQ6/nroDHqh+JiX2eAqXIsDvIe038mjBAfsYo8SiXMjIlr8AOM5YIv+UxDayf64Cf9BwWqAwtPaF03aI75DK0GpuDt5/fXkXhMZL9PhAikh5W8EINREFAfiUeEEzrKEZRWYwV5l7+emaNhqO4PNrkt+Lu0A0X5ooJTJkxQFC+5/s8qUoIWl5pIhJXkKkEXYhfO/dk0LMmmoa1CoFmE3VamBXrWnuZREExhBqS946YSRKnWtcfB9S0FMnKa8Aqxl29T6jSaohPoIOwrC5UKY3iciGJamfeh/uqiPucXcPh+DM4ZZ0rNeNB4x8EPQzwGdcBz52HxuYlCZvI4cYnSothd5jdtXs6kgAhxS/Gxc8jmqNNAPKnPpfiDjTdiVEP6oeohylScq7x8pf/hHdbfcY75iG1BksVrlVWaVexZszxNZ35LISWY3+uJzclMNdYCc/SZ2ZTySitBmeOVmhg8M=
+before_deploy: # omit node_modules, since we set skip_cleanup below
+  - rm -rf node_modules
