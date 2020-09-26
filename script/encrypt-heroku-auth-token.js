@@ -132,8 +132,11 @@ const main = async () => {
 
   /* Download the repo's public key supplied by Travis. */
   const travisURL = `https://api.travis-ci.org/repos/${fullName}/key`
+  console.log('main -> travisURL', travisURL)
+
   const travisResponse = await axios.get(travisURL)
   const key = travisResponse.data.key
+  console.log('main -> key', key)
   const keyBuffer = Buffer.from(key, 'utf-8')
   if (verbose) console.log('Received Travis pubkey:\n', keyBuffer.toString())
 

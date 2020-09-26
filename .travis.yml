@@ -5,7 +5,7 @@ services:
   - postgresql # starts up postgres
 addons:
   postgresql: '10' # recent postgres version on Travis
-dist: xenial # uses xenial environment
+dist: xenial # uses xenial environment (OSyst linux OS)
 notifications:
   email:
     on_success: change # default: change (only when going from broken to fixed)
@@ -13,7 +13,7 @@ notifications:
 install:
   - npm ci # faster, goes only from package-lock
 before_script:
-  - psql -c 'create database "grace-shopper-test";' -U postgres # remember to change this name if you change it elsewhere (e.g. package.json)
+  - psql -c 'create database "grace-shopper-test";' -U postgres # remember to change this name if you change it elsewhere (e.g. package.json) ==== before anything this creates all that we need,  this should create grace-shopper-test... virtual machine b4 running your code
 script:
   - npm test # test the grace-shopper
   - npm run build-client # make the bundle
