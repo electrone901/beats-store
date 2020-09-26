@@ -5,7 +5,7 @@ import TextField from '@material-ui/core/TextField'
 import FormControlLabel from '@material-ui/core/FormControlLabel'
 import Checkbox from '@material-ui/core/Checkbox'
 
-export default function PaymentForm({paymentVal, setPaymentChange}) {
+function PaymentForm({paymentVal, setPaymentChange}) {
   return (
     <React.Fragment>
       <Typography variant="h6" gutterBottom>
@@ -70,3 +70,4 @@ export default function PaymentForm({paymentVal, setPaymentChange}) {
     </React.Fragment>
   )
 }
+export default PaymentForm
