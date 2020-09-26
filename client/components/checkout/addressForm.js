@@ -5,7 +5,7 @@ import TextField from '@material-ui/core/TextField'
 import FormControlLabel from '@material-ui/core/FormControlLabel'
 import Checkbox from '@material-ui/core/Checkbox'
 
-function AddressForm({addressVal, setAddressChange}) {
+const AddressForm = ({addressVal, setAddressChange}) => {
   console.log('OUTPUT: AddressForm -> addressVal', addressVal)
   return (
     <React.Fragment>
