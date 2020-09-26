@@ -4,7 +4,7 @@ import {Provider} from 'react-redux'
 import {Router} from 'react-router-dom'
 import history from './history'
 import store from './store'
-// import App from './app'
+import App from './app'
 
 // establishes socket connection
 import './socket'
@@ -12,8 +12,8 @@ import './socket'
 ReactDOM.render(
   <Provider store={store}>
     <Router history={history}>
-      <div>HELLO ARE YOU WORKING?</div>
-      {/* <App /> */}
+      {/* <div>HELLO ARE YOU WORKING?</div> */}
+      <App />
     </Router>
   </Provider>,
   document.getElementById('app')
