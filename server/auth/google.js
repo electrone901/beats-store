@@ -18,49 +18,49 @@ const {clientID, clientSecret, callback} = require('../../secrets') // imports a
  * process.env.GOOGLE_CLIENT_SECRET = 'your google client secret'
  * process.env.GOOGLE_CALLBACK = '/your/google/callback'
  */
+let googleConfig = {}
 
-if (!clientID || !clientSecret) {
-  console.log(
-    '*****Google client ID / secret not found. Skipping Google OAuth.'
-  )
+if (process.env.GOOGLE_CLIENT_ID || process.env.GOOGLE_CLIENT_SECRET) {
+  googleConfig = {
+    clientID: process.env.GOOGLE_CLIENT_ID,
+    clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+    callbackURL: 'https://beats-store.herokuapp.com/'
+  }
 } else {
-  const googleConfig = {
+  googleConfig = {
     clientID: clientID,
     clientSecret: clientSecret,
     callbackURL: callback
   }
-
-  const strategy = new GoogleStrategy(
-    googleConfig,
-    (token, refreshToken, profile, done) => {
-      const googleId = profile.id
-      const email = profile.emails[0].value
-      const imgUrl = profile.photos[0].value
-      const firstName = profile.name.givenName
-      const lastName = profile.name.familyName
-      const fullName = profile.displayName
-
-      User.findOrCreate({
-        where: {googleId},
-        defaults: {email, imgUrl, firstName, lastName, fullName}
-      })
-        .then(([user]) => done(null, user))
-        .catch(done)
-    }
-  )
-
-  passport.use(strategy)
-
-  router.get(
-    '/',
-    passport.authenticate('google', {scope: ['email', 'profile']})
-  )
-
-  router.get(
-    '/callback',
-    passport.authenticate('google', {
-      successRedirect: '/home',
-      failureRedirect: '/login'
-    })
-  )
 }
+
+const strategy = new GoogleStrategy(
+  googleConfig,
+  (token, refreshToken, profile, done) => {
+    const googleId = profile.id
+    const email = profile.emails[0].value
+    const imgUrl = profile.photos[0].value
+    const firstName = profile.name.givenName
+    const lastName = profile.name.familyName
+    const fullName = profile.displayName
+
+    User.findOrCreate({
+      where: {googleId},
+      defaults: {email, imgUrl, firstName, lastName, fullName}
+    })
+      .then(([user]) => done(null, user))
+      .catch(done)
+  }
+)
+
+passport.use(strategy)
+
+router.get('/', passport.authenticate('google', {scope: ['email', 'profile']}))
+
+router.get(
+  '/callback',
+  passport.authenticate('google', {
+    successRedirect: '/home',
+    failureRedirect: '/login'
+  })
+)
