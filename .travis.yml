@@ -17,13 +17,13 @@ before_script:
 script:
   - npm test # test the grace-shopper
   - npm run build-client # make the bundle
-before_deploy: # omit node_modules, since we set skip_cleanup below
-  - rm -rf node_modules
+# before_deploy: # omit node_modules, since we set skip_cleanup below
+#   - rm -rf node_modules
 deploy: # see README for details on these keys
   skip_cleanup: true
   provider: heroku
-  app: beats-store
+  app: ""
   api_key:
-    secure: X0nF1r8uro3V+p0GIttLEEcUuvrcixTUcDPcCVRDWKWXr88Tg/S36LB0KmHK0MZhLvlbLi5XAD4mxCO5geXDT674e3il6PLHtb4lVPdyRvm79CcO4a7Eyd/1NonQWALtKSQBZII01q2Q6ihU6MbwQyEtI008s+t25RIoUrox1lF5EKk8w2UYgygBo8UxvX1zLrC48c/v9YikXixJndqj/gxWfQ6/nroDHqh+JiX2eAqXIsDvIe038mjBAfsYo8SiXMjIlr8AOM5YIv+UxDayf64Cf9BwWqAwtPaF03aI75DK0GpuDt5/fXkXhMZL9PhAikh5W8EINREFAfiUeEEzrKEZRWYwV5l7+emaNhqO4PNrkt+Lu0A0X5ooJTJkxQFC+5/s8qUoIWl5pIhJXkKkEXYhfO/dk0LMmmoa1CoFmE3VamBXrWnuZREExhBqS946YSRKnWtcfB9S0FMnKa8Aqxl29T6jSaohPoIOwrC5UKY3iciGJamfeh/uqiPucXcPh+DM4ZZ0rNeNB4x8EPQzwGdcBz52HxuYlCZvI4cYnSothd5jdtXs6kgAhxS/Gxc8jmqNNAPKnPpfiDjTdiVEP6oeohylScq7x8pf/hHdbfcY75iG1BksVrlVWaVexZszxNZ35LISWY3+uJzclMNdYCc/SZ2ZTySitBmeOVmhg8M=
+    secure: Dr6/uEXj9c+6iaVi67fndPzuYC0zGhX0Cs7e0pkO2La3VfqAkmDC7MkB8qZl9foSMY3iCBubwKSF5cvTRJQpBkc6p1LD47XVDKBcEFXLJxrF+K1JUr8B+pEbuoFgPwjR0ZiI+rQf0ZY+O8JQJdKhy5GdAWHFrbINYW9hbD1mg3t/ZjDxRKUPxDCuW3wxAOV7Is+pysPR1RWHNadS/73bYtBNx4PCMx4vl5r3Qfzg7wVma3R+4QBT1mAPO7cR3whS85zQ9ZicS7I1AzhZ9MNH710bF9bPde/Anad1FTHuPFun1bvS4uDZgmQeKOCjqeDAzW35HsOzgLnPDfJBYeSRfNb6+x9xUAn0Dz9W5eUYFO1u0ZvOJd9LATThqH+B0DJDS3vlslare/mFZ1pA3xnvVm+F28qL64ImbM3cpKBkbNEAiBI3Q74mKY2hHYQZJY+yWMZUNsKTo736ib/aAXRauGayVSHzyCtrBmG8TGCyII7/467IGplCuJQlbf0NaWXwWqZLRuPfg0FRfOvISEQJdkueutkkmRzZ2L6naVw4gUzGhXgvQxOyf0jxUCqWZo+gNr5nhxdSSYgQZKYJu4dSRNkBdWCC9xaUOvek3l+DpdiGehuxn21yXTW9tf646GjubNBxBcI6/jWahMWz5BlbD4w2rhB1WMM78M7WTzPlkYc=
 before_deploy: # omit node_modules, since we set skip_cleanup below
   - rm -rf node_modules
