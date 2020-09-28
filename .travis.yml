@@ -22,7 +22,7 @@ script:
 deploy: # see README for details on these keys
   skip_cleanup: true
   provider: heroku
-  app: ""
+  app: "beats-store"
   api_key:
     secure: Dr6/uEXj9c+6iaVi67fndPzuYC0zGhX0Cs7e0pkO2La3VfqAkmDC7MkB8qZl9foSMY3iCBubwKSF5cvTRJQpBkc6p1LD47XVDKBcEFXLJxrF+K1JUr8B+pEbuoFgPwjR0ZiI+rQf0ZY+O8JQJdKhy5GdAWHFrbINYW9hbD1mg3t/ZjDxRKUPxDCuW3wxAOV7Is+pysPR1RWHNadS/73bYtBNx4PCMx4vl5r3Qfzg7wVma3R+4QBT1mAPO7cR3whS85zQ9ZicS7I1AzhZ9MNH710bF9bPde/Anad1FTHuPFun1bvS4uDZgmQeKOCjqeDAzW35HsOzgLnPDfJBYeSRfNb6+x9xUAn0Dz9W5eUYFO1u0ZvOJd9LATThqH+B0DJDS3vlslare/mFZ1pA3xnvVm+F28qL64ImbM3cpKBkbNEAiBI3Q74mKY2hHYQZJY+yWMZUNsKTo736ib/aAXRauGayVSHzyCtrBmG8TGCyII7/467IGplCuJQlbf0NaWXwWqZLRuPfg0FRfOvISEQJdkueutkkmRzZ2L6naVw4gUzGhXgvQxOyf0jxUCqWZo+gNr5nhxdSSYgQZKYJu4dSRNkBdWCC9xaUOvek3l+DpdiGehuxn21yXTW9tf646GjubNBxBcI6/jWahMWz5BlbD4w2rhB1WMM78M7WTzPlkYc=
 before_deploy: # omit node_modules, since we set skip_cleanup below
